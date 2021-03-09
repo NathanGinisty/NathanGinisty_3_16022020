@@ -164,6 +164,8 @@ header {
     text-align: center;
     padding-top: 15px;
     padding-bottom: 5px;
+    
+    cursor: pointer;
 }
 
 
@@ -210,9 +212,15 @@ main {
 }
 
 .button-restaurant:hover {
-    transition-duration: 0.2s;
+    transition-duration: 0.3s;
     transform: scale(1.03);
     filter: saturate(2);
+}
+
+.button-restaurant:not(hover) {
+    transition-duration: 0.3s;
+    transform: scale(1);
+    filter: saturate(1);
 }
 
 .img-restaurant {
@@ -275,11 +283,13 @@ main {
     width: 40px;
     height: 40px;
     
-    visibility:hidden;
+    opacity:0;
 }
 
 .restaurant-favorite-added:hover {
-    visibility: visible;
+    opacity: 1;
+    -webkit-transition: opacity .25s ease-in-out .0s;
+    transition: opacity .25s ease-in-out .0s;
 }
 
 @media only screen and (min-width: 0px) and (max-width: 375px) {
@@ -323,11 +333,19 @@ main {
     position: absolute;
     z-index: -1;
     width: 100%;
+    max-width: 1200px;
+    
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
 }
 
 .menu {
     margin-top: 270px;
-    
+    max-width: 1200px;
+    margin: 0 auto;
     background-color: whitesmoke;
     border-top-right-radius: 40px;
     border-top-left-radius: 40px;
@@ -341,6 +359,8 @@ main {
 
 /* -- like, favorite, heart */
 .menu-restaurant-favorite {
+    position: relative;
+    
     width: 30px;
     height: 30px;
     
@@ -348,17 +368,25 @@ main {
 }
 
 .menu-restaurant-favorite-added {
+    position: absolute;
     z-index: 10;
     
     width: 30px;
     height: 30px;
     
-    visibility:hidden;
+    /* position a la bourrin, a voir pour la refaire en dynamique*/
+    top: 371px;
+    right: 50px;
+    
+    opacity:0;
 }
 
 .menu-restaurant-favorite-added:hover {
-    visibility:visible;
+    opacity: 1;
+    -webkit-transition: opacity .25s ease-in-out .0s;
+    transition: opacity .25s ease-in-out .0s;
 }
+
 
 /* -- choice */
 .name-type-choice {
@@ -376,10 +404,10 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-around;
     
     height: max-content;
     width: 100%;
-    
 }
 
 .block-choice {
@@ -388,7 +416,7 @@ main {
     box-shadow: 2px 2px 5px lightgrey;
     
     width: 94%;
-    margin: 8px 3% 8px 3%;
+    margin: 8px;
     padding: 12px;
     
     -webkit-box-sizing: border-box;
@@ -404,15 +432,15 @@ main {
     'accomp price';
 }
 
-/* .block-choice:hover {
-    background-color: red;
+.block-choice:hover {
+    transform: scale(1.05);
     transition-duration: 0.25s;
-} */
+} 
 
-/* .block-choice:not(hover) {
-    background-color: white;
+.block-choice:not(hover) {
+    transform: scale(1);
     transition-duration: 0.25s;
-} */
+}
 
 .choice-validate {
     grid-area: valid;
@@ -450,6 +478,69 @@ main {
     padding-right: 16px;
 }
 
+
+@media only screen and (min-width: 0px) and (max-width: 375px) {
+    .menu {
+        margin-top: 170px;
+    }
+
+    .menu-restaurant-favorite-added {
+        /* position a la bourrin, a voir pour la refaire en dynamique*/
+        top: 291px;
+    }
+}
+
+@media only screen and (min-width: 376px) and (max-width: 500px) {
+    .menu {
+        margin-top: 220px;
+    }
+
+    .menu-restaurant-favorite-added {
+        top: 321px;
+    }
+}
+
+@media only screen and (min-width: 501px) and (max-width: 700px){
+    .menu {
+        margin-top: 270px;
+    }
+
+    .menu-restaurant-favorite-added {
+        top: 371px;
+    }
+}
+
+@media only screen and (min-width: 701px) and (max-width: 1000px){
+    .menu {
+        margin-top: 380px;
+    }
+
+    .menu-restaurant-favorite-added {
+        top: 481px;
+    }
+}
+
+@media only screen and (min-width: 1000px)  and (max-width: 1200px){
+    .menu {
+        margin-top: 500px;
+    }
+
+    .menu-restaurant-favorite-added {
+        top: 601px;
+    }
+}
+
+@media only screen and (min-width: 1201px) {
+    .menu {
+        margin-top: 580px;
+        border-top-right-radius: 0px;
+        border-top-left-radius: 0px;
+    }
+
+    .menu-restaurant-favorite-added {
+        top: 681px;
+    }
+}
 
 
 
@@ -582,6 +673,8 @@ main {
     display: grid;
     grid-template-columns: 5% 20% 75%;
     justify-content: center;
+    
+    cursor: pointer;
 }
 
 .step-functionment:hover {
@@ -659,50 +752,70 @@ main {
     left:0;
     background-color: #227c65;
     
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
+    display: block;
+    /* justify-content: center;
+    align-items: center; */
+    
     animation: disappear 2s;
     animation-fill-mode: forwards;
     -webkit-animation-fill-mode: forwards;
 }
 
-.loader {
-    background-color:#9256dc;
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    border-radius: 20%;
-    position: relative;
-    border: 4px solid #Fff;
-
-    animation: rotating 3s;
-    animation-fill-mode: forwards;
-    -webkit-animation-fill-mode: forwards;
+@keyframes disappear {
+    
+    50% {
+        display: block;
+        opacity: 1;
+    }
+    
+    100% {
+        display: none;
+        opacity: 0;
+        pointer-events: none
+    }
 }
 
+.lds-ring {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
-@keyframes rotating {
+.lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid #fff;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #fff transparent transparent transparent;
+    
+}
+.lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+@keyframes lds-ring {
     0% {
+        transform: rotate(0deg);
+    }
+    100% {
         transform: rotate(360deg);
     }
-
-    100% {
-        display: none;
-        opacity: 0;
-        pointer-events: none
-    }
 }
-
-@keyframes disappear {
-    100% {
-        display: none;
-        opacity: 0;
-        pointer-events: none
-    }
-}
-
 
 /* ------------------------------------------------------------ */
 /* -------------------------- Footer -------------------------- */
@@ -733,6 +846,8 @@ footer {
     text-decoration: none;
     
     padding-bottom: 16px;
+    
+    cursor: pointer;
 }
 
 .nav-link {
