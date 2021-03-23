@@ -42,6 +42,10 @@
     font-size: xx-large;
 }
 
+.unbold {
+    font-weight: normal;
+}
+
 /* Paragraph */
 p {
     margin-bottom: 8px;
@@ -391,7 +395,9 @@ main {
 
 /* -- choice */
 .name-type-choice {
+
     margin: 35px 0 0 20px;
+    font-weight: normal;
 }
 
 .block-separator {
@@ -418,10 +424,10 @@ main {
     border-radius: 16px;
     box-shadow: 2px 2px 5px lightgrey;
     
-    width: 95%;
+    width: 94%;
     height: 75px;
     margin: 8px;
-
+    
     cursor: pointer;
     
     -webkit-box-sizing: border-box;
@@ -451,7 +457,7 @@ main {
 
 .choice-validate {
     background: #99E2D0;
-
+    
     width: 0%;
     height: 100%;
     
@@ -469,7 +475,7 @@ main {
     height: 30px;
     width: 30px; */
     margin: auto;
-
+    
     /* text-align: center;
     color: #99E2D0; */
 }
@@ -492,16 +498,16 @@ main {
 .choice-main {
     width: 90%;
     padding: 12px;
-
+    
     /* background-color: red; */
-
+    
     overflow: hidden;
 }
 
 .choice-main-name {
     font-weight: bold;
     font-size: 20px;
-
+    
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -516,9 +522,9 @@ main {
 .choice-price {
     width: 10%;
     padding: 36px 16px 12px 12px;
-
+    
     /* background-color: cyan; */
-
+    
     text-align: right;
     font-weight: bold;
 }
@@ -785,7 +791,7 @@ main {
 }
 
 /* ------------------------------------------------------------ */
-/* -------------------------- Loader -------------------------- */
+/* --------------------- Loader animation --------------------- */
 /* ------------------------------------------------------------ */
 
 .loader-wrapper {
@@ -862,6 +868,52 @@ main {
     }
 }
 
+
+
+/* ------------------------------------------------------------ */
+/* ------------------- Page fading animation ------------------ */
+/* ------------------------------------------------------------ */
+
+#fade-in {
+    width: 100%;
+
+    -webkit-animation: fadein 1.5s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 1.5s; /* Firefox < 16 */
+        -ms-animation: fadein 1.5s; /* Internet Explorer */
+         -o-animation: fadein 1.5s; /* Opera < 12.1 */
+            animation: fadein 1.5s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+
 /* ------------------------------------------------------------ */
 /* -------------------------- Footer -------------------------- */
 /* ------------------------------------------------------------ */
@@ -883,6 +935,10 @@ footer {
     color: white;
 }
 
+.footer-list {
+    list-style-type:none;
+}
+
 .mini-logo {
     font-family: "Shrikhand", sans-serif;
     font-size: 18px;
@@ -897,6 +953,7 @@ footer {
 .nav-link {
     text-decoration: none;
     color: white;
+    line-height: 26px;
 }
 
 .nav-link-icon {
