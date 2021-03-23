@@ -231,6 +231,7 @@ main {
 .img-restaurant {
     position: relative;
     flex: 1;
+    z-index: 10;
 }
 
 .img-restaurant-cropped {
