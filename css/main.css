@@ -170,7 +170,7 @@ header {
 
 
 @media only screen and (min-width: 1201px){
-
+    
 }
 
 
@@ -410,18 +410,63 @@ main {
     width: 100%;
 }
 
-.block-choice {
+.choice {
+    display: flex;
+    
     background-color: white;
     border-radius: 16px;
     box-shadow: 2px 2px 5px lightgrey;
     
-    width: 94%;
+    width: 95%;
     margin: 8px;
-    padding: 12px;
+    
     
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+}
+
+.choice:hover {
+    transform: scale(1);
+    /* transition-duration: 0.25s; */
+} 
+
+.choice:not(hover) {
+    transform: scale(1);
+    /* transition-duration: 0.25s; */
+}
+
+.choice:hover .choice-validate {
+    right: 0px;
+    transition-duration: 0.3s;
+    visibility: visible;
+} 
+
+/* .choice:not(hover) .choice-validate {
+    right: -90px;
+    transition-duration: 0.3s;
+    visibility: visible;
+    position:absolute;
+}  */
+
+.choice-validate {
+    background: #99E2D0;
+    
+    position: fixed;
+    right: -90px;
+    
+    width: 90px;
+    height: 75px;
+    
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+    
+    visibility: hidden;
+}
+
+.block-choice {
+    width: 100%;
+    padding: 12px;
     
     font-size: 16px;
     line-height: 25px;
@@ -430,28 +475,8 @@ main {
     grid-template-areas:
     'header header'
     'accomp price';
-}
 
-.block-choice:hover {
-    transform: scale(1.05);
-    transition-duration: 0.25s;
-} 
-
-.block-choice:not(hover) {
-    transform: scale(1);
-    transition-duration: 0.25s;
-}
-
-.choice-validate {
-    grid-area: valid;
-    
-    background: #99E2D0;
-    position: absolute;
-    width: 80px;
-    height: 75px;
-    
-    border-top-right-radius: 16px;
-    border-bottom-right-radius: 16px;
+    overflow: hidden; /*for choice-accompaniment*/
 }
 
 .choice-name {
@@ -464,10 +489,8 @@ main {
 .choice-accompaniment{    
     grid-area: accomp;
     
-    white-space: nowrap;
-    overflow: hidden;
     text-overflow: ellipsis;
-    
+    white-space: nowrap;
 }
 
 .choice-price {
@@ -483,7 +506,7 @@ main {
     .menu {
         margin-top: 170px;
     }
-
+    
     .menu-restaurant-favorite-added {
         /* position a la bourrin, a voir pour la refaire en dynamique*/
         top: 291px;
@@ -494,7 +517,7 @@ main {
     .menu {
         margin-top: 220px;
     }
-
+    
     .menu-restaurant-favorite-added {
         top: 321px;
     }
@@ -504,7 +527,7 @@ main {
     .menu {
         margin-top: 270px;
     }
-
+    
     .menu-restaurant-favorite-added {
         top: 371px;
     }
@@ -514,7 +537,7 @@ main {
     .menu {
         margin-top: 380px;
     }
-
+    
     .menu-restaurant-favorite-added {
         top: 481px;
     }
@@ -524,7 +547,7 @@ main {
     .menu {
         margin-top: 500px;
     }
-
+    
     .menu-restaurant-favorite-added {
         top: 601px;
     }
@@ -536,7 +559,7 @@ main {
         border-top-right-radius: 0px;
         border-top-left-radius: 0px;
     }
-
+    
     .menu-restaurant-favorite-added {
         top: 681px;
     }
