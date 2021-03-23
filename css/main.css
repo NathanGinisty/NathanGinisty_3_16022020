@@ -127,6 +127,7 @@ body {
     padding: 0px;
     
     height: 100%;
+    /* max-width: 1200px; */
 }
 
 
@@ -418,87 +419,108 @@ main {
     box-shadow: 2px 2px 5px lightgrey;
     
     width: 95%;
+    height: 75px;
     margin: 8px;
-    
+
+    cursor: pointer;
     
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
 
-.choice:hover {
-    transform: scale(1);
-    /* transition-duration: 0.25s; */
-} 
-
-.choice:not(hover) {
-    transform: scale(1);
-    /* transition-duration: 0.25s; */
-}
-
 .choice:hover .choice-validate {
-    right: 0px;
-    transition-duration: 0.3s;
-    visibility: visible;
+    width: 90px;
+    transition-duration: 0.5s;
 } 
 
-/* .choice:not(hover) .choice-validate {
-    right: -90px;
-    transition-duration: 0.3s;
-    visibility: visible;
-    position:absolute;
-}  */
+.choice:hover .img-validate {
+    transform: rotate(0deg);
+    transition-duration: 0.5s;
+} 
+
+.choice:not(hover) .choice-validate {
+    width: 0px;
+    transition-duration: 0.5s;
+} 
+
+.choice:not(hover) .img-validate {
+    transform: rotate(90deg);
+    transition-duration: 0.5s;
+} 
 
 .choice-validate {
     background: #99E2D0;
+
+    width: 0%;
+    height: 100%;
     
-    position: fixed;
-    right: -90px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
     
-    width: 90px;
-    height: 75px;
-    
-    border-top-right-radius: 16px;
-    border-bottom-right-radius: 16px;
-    
-    visibility: hidden;
+    display: flex;
+    overflow: hidden;
 }
 
-.block-choice {
+.choice-validate-icon {
+    /* position: relative;
+    background: white;
+    border-radius: 100%;
+    height: 30px;
+    width: 30px; */
+    margin: auto;
+
+    /* text-align: center;
+    color: #99E2D0; */
+}
+
+.img-validate {
+    height: 30px;
+    width: 30px;
+    transform: rotate(90deg);
+}
+
+.choice-block {
     width: 100%;
-    padding: 12px;
     
     font-size: 16px;
     line-height: 25px;
     
-    display: grid;
-    grid-template-areas:
-    'header header'
-    'accomp price';
-
-    overflow: hidden; /*for choice-accompaniment*/
+    display: flex;
 }
 
-.choice-name {
-    grid-area: header;
-    
+.choice-main {
+    width: 90%;
+    padding: 12px;
+
+    /* background-color: red; */
+
+    overflow: hidden;
+}
+
+.choice-main-name {
     font-weight: bold;
     font-size: 20px;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
-.choice-accompaniment{    
-    grid-area: accomp;
-    
-    text-overflow: ellipsis;
+.choice-main-accompaniment{    
+    overflow: hidden;
     white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .choice-price {
-    grid-area: price;
-    
+    width: 10%;
+    padding: 36px 16px 12px 12px;
+
+    /* background-color: cyan; */
+
     text-align: right;
     font-weight: bold;
-    padding-right: 16px;
 }
 
 
@@ -859,7 +881,6 @@ footer {
     letter-spacing: 0.5px;
     font-size: 16px;
     color: white;
-    
 }
 
 .mini-logo {
