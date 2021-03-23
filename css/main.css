@@ -345,6 +345,8 @@ main {
     left: 0;
     right: 0;
     text-align: center;
+
+    filter: saturate(2);
 }
 
 .menu {
