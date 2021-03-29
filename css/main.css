@@ -292,8 +292,8 @@ main {
 
 .restaurant-favorite-added:hover {
     opacity: 1;
-    -webkit-transition: opacity .25s ease-in-out .0s;
-    transition: opacity .25s ease-in-out .0s;
+    -webkit-transition: opacity .35s ease-in-out .0s;
+    transition: opacity .35s ease-in-out .0s;
 }
 
 @media only screen and (min-width: 0px) and (max-width: 375px) {
@@ -337,13 +337,13 @@ main {
     position: absolute;
     z-index: -1;
     width: 100%;
-
+    
     margin-left: auto;
     margin-right: auto;
     left: 0;
     right: 0;
     text-align: center;
-
+    
     filter: saturate(2);
 }
 
@@ -357,6 +357,7 @@ main {
 .menu-block {
     max-width: 1000px;
     margin: 0 auto;
+    position: relative;
 }
 
 .menu-title {
@@ -367,38 +368,38 @@ main {
 
 /* -- like, favorite, heart */
 .menu-restaurant-favorite {
-    position: relative;
+    position: absolute;
     
-    width: 30px;
-    height: 30px;
+    top: 32px;
+    right: 18px;
     
-    margin: auto 0 auto 0;
+    width: 40px;
+    height: 40px;
 }
 
 .menu-restaurant-favorite-added {
     position: absolute;
     z-index: 10;
     
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     
-    /* position a la bourrin, a voir pour la refaire en dynamique*/
-    top: 371px;
-    right: 50px;
+    top: 32px;
+    right: 18px;
     
     opacity:0;
 }
 
 .menu-restaurant-favorite-added:hover {
     opacity: 1;
-    -webkit-transition: opacity .25s ease-in-out .0s;
-    transition: opacity .25s ease-in-out .0s;
+    -webkit-transition: opacity .35s ease-in-out .0s;
+    transition: opacity .35s ease-in-out .0s;
 }
 
 
 /* -- choice */
 .name-type-choice {
-
+    
     margin: 35px 0 0 20px;
     font-weight: normal;
 }
@@ -537,20 +538,11 @@ main {
     .menu {
         margin-top: 170px;
     }
-    
-    .menu-restaurant-favorite-added {
-        /* position a la bourrin, a voir pour la refaire en dynamique*/
-        top: 291px;
-    }
 }
 
 @media only screen and (min-width: 376px) and (max-width: 500px) {
     .menu {
         margin-top: 220px;
-    }
-    
-    .menu-restaurant-favorite-added {
-        top: 321px;
     }
 }
 
@@ -558,19 +550,11 @@ main {
     .menu {
         margin-top: 270px;
     }
-    
-    .menu-restaurant-favorite-added {
-        top: 371px;
-    }
 }
 
 @media only screen and (min-width: 701px) and (max-width: 1000px){
     .menu {
         margin-top: 380px;
-    }
-    
-    .menu-restaurant-favorite-added {
-        top: 481px;
     }
 }
 
@@ -578,20 +562,12 @@ main {
     .menu {
         margin-top: 500px;
     }
-    
-    .menu-restaurant-favorite-added {
-        top: 601px;
-    }
 }
 
 @media only screen and (min-width: 1201px) {
     .menu {
         margin-top: 580px;
         border-radius: 0px;
-    }
-    
-    .menu-restaurant-favorite-added {
-        top: 681px;
     }
 }
 
@@ -849,7 +825,7 @@ main {
     border-radius: 50%;
     animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
     border-color: #9356dc transparent transparent transparent;
-
+    
     border-image: linear-gradient(0deg, #9356dc, #99E2D0);
     /* background-color:#FF79DA; */
 }
@@ -879,12 +855,12 @@ main {
 
 .fade-in {
     width: 100%;
-
+    
     -webkit-animation: fadein 1.5s; /* Safari, Chrome and Opera > 12.1 */
-       -moz-animation: fadein 1.5s; /* Firefox < 16 */
-        -ms-animation: fadein 1.5s; /* Internet Explorer */
-         -o-animation: fadein 1.5s; /* Opera < 12.1 */
-            animation: fadein 1.5s;
+    -moz-animation: fadein 1.5s; /* Firefox < 16 */
+    -ms-animation: fadein 1.5s; /* Internet Explorer */
+    -o-animation: fadein 1.5s; /* Opera < 12.1 */
+    animation: fadein 1.5s;
 }
 
 @keyframes fadein {
