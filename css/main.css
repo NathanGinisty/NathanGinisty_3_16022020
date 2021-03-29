@@ -367,7 +367,7 @@ main {
 
 /* -- like, favorite, heart */
 .menu-restaurant-favorite {
-    position: absolute;
+    position: relative;
     
     width: 30px;
     height: 30px;
