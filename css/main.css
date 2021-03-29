@@ -337,8 +337,7 @@ main {
     position: absolute;
     z-index: -1;
     width: 100%;
-    max-width: 1200px;
-    
+
     margin-left: auto;
     margin-right: auto;
     left: 0;
@@ -350,11 +349,14 @@ main {
 
 .menu {
     margin-top: 270px;
-    max-width: 1200px;
-    margin: 0 auto;
     background-color: whitesmoke;
     border-top-right-radius: 40px;
     border-top-left-radius: 40px;
+}
+
+.menu-block {
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .menu-title {
@@ -365,7 +367,7 @@ main {
 
 /* -- like, favorite, heart */
 .menu-restaurant-favorite {
-    position: relative;
+    position: absolute;
     
     width: 30px;
     height: 30px;
@@ -585,8 +587,7 @@ main {
 @media only screen and (min-width: 1201px) {
     .menu {
         margin-top: 580px;
-        border-top-right-radius: 0px;
-        border-top-left-radius: 0px;
+        border-radius: 0px;
     }
     
     .menu-restaurant-favorite-added {
@@ -921,7 +922,7 @@ main {
 /* ------------------------------------------------------------ */
 
 footer {
-    height: 200px;
+    height: 180px;
     width: 100%;
     background-color: rgb(50, 50, 50);
     
@@ -929,7 +930,6 @@ footer {
 
 .footer-text {
     padding-top: 25px;
-    padding-left: 25px;
     
     line-height: 20px;
     letter-spacing: 0.5px;
@@ -947,12 +947,14 @@ footer {
     font-weight: normal;
     text-decoration: none;
     
+    padding-left: 25px;
     padding-bottom: 16px;
     
     cursor: pointer;
 }
 
 .nav-link {
+    padding-left: 25px;
     text-decoration: none;
     color: white;
     line-height: 26px;
